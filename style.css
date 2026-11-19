@@ -12,6 +12,9 @@ body {
     line-height: 1.7;
 }
 
+
+/* HEADER */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -21,14 +24,41 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    gap: 20px;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     color: white;
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 1px;
 }
+
+.logo-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #2684e8;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo small {
+    color: #65b5ff;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* NAVIGATION */
 
 nav {
     display: flex;
@@ -40,25 +70,34 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #65b5ff;
 }
 
+
+/* HOME SECTION */
+
 .hero {
     min-height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
     padding: 100px 10%;
+}
+
+.hero-content {
+    max-width: 650px;
 }
 
 .intro {
     color: #65b5ff;
     letter-spacing: 3px;
     font-size: 13px;
+    font-weight: bold;
 }
 
 .hero h1 {
@@ -67,22 +106,66 @@ nav a:hover {
     line-height: 1.2;
 }
 
+.hero h2 {
+    margin-bottom: 15px;
+}
+
 .hero h2 span {
     color: #65b5ff;
+}
+
+.hero h3 {
+    color: #aab7ca;
+    font-size: 16px;
+    margin-bottom: 18px;
 }
 
 .hero p {
     max-width: 650px;
 }
 
+
+/* PROFILE PICTURE */
+
+.profile-frame {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.profile-frame img {
+    width: 230px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #2684e8;
+    background: #202e43;
+}
+
+.profile-frame h3 {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.profile-frame span {
+    color: #65b5ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+
+/* BUTTONS */
+
 .button {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 12px 25px;
     background: #2684e8;
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -90,6 +173,9 @@ nav a:hover {
     background: #65b5ff;
     transform: translateY(-2px);
 }
+
+
+/* GENERAL SECTIONS */
 
 section:not(.hero) {
     padding: 80px 10%;
@@ -100,31 +186,42 @@ section h2 {
     margin-bottom: 25px;
 }
 
-#about {
-    background: #172235;
+section p {
+    max-width: 850px;
 }
 
-#skills {
-    background: #101827;
-}
 
-#projects {
-    background: #172235;
-}
+/* SECTION BACKGROUNDS */
 
-#creative {
-    background: #101827;
-}
-
+#about,
+#projects,
 #contact {
     background: #172235;
 }
 
+#skills,
+#creative,
+#calculator,
+#quiz,
+#development {
+    background: #101827;
+}
+
+
+/* GRID LAYOUT */
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
     gap: 20px;
+    margin-top: 25px;
 }
+
+
+/* PROJECT AND SKILL CARDS */
 
 .card {
     background: #202e43;
@@ -151,11 +248,135 @@ section h2 {
     font-size: 13px;
 }
 
-#creative h3 {
-    color: #65b5ff;
-    font-size: 25px;
-    margin-bottom: 15px;
+
+/* INTERACTIVE APPLICATIONS */
+
+.demo-app {
+    max-width: 520px;
+    margin: 25px auto 0;
+    padding: 28px;
+    background: #202e43;
+    border: 1px solid #34445c;
+    border-radius: 14px;
 }
+
+.demo-app h3 {
+    color: #65b5ff;
+    margin-bottom: 18px;
+}
+
+.demo-app label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #bdc9da;
+}
+
+.demo-app input,
+.demo-app select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #465a74;
+    border-radius: 6px;
+    background: #101827;
+    color: white;
+    font-size: 15px;
+}
+
+.result {
+    margin-top: 18px;
+    color: #65b5ff;
+    font-weight: bold;
+}
+
+.app-footer {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #34445c;
+    color: #65b5ff;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+
+/* QUIZ */
+
+#quiz-options {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quiz-option {
+    width: 100%;
+    padding: 13px;
+    background: #101827;
+    color: white;
+    border: 1px solid #465a74;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.quiz-option:hover {
+    border-color: #65b5ff;
+    background: #263b57;
+}
+
+#quiz-feedback,
+#quiz-score {
+    margin-top: 15px;
+    color: #65b5ff;
+    font-weight: bold;
+}
+
+
+/* CONTACT SECTION */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(160px, 1fr)
+    );
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    padding: 25px 15px;
+    background: #202e43;
+    border: 1px solid #34445c;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.contact-card h3 {
+    color: #65b5ff;
+}
+
+.contact-card p {
+    color: #bdc9da;
+    font-size: 13px;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: #65b5ff;
+}
+
+
+/* FOOTER */
 
 footer {
     text-align: center;
@@ -165,7 +386,11 @@ footer {
     font-size: 14px;
 }
 
-@media (max-width: 750px) {
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+
     header {
         flex-direction: column;
         gap: 15px;
@@ -176,11 +401,44 @@ footer {
         gap: 12px;
     }
 
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        min-height: 65vh;
+    }
+
+    .hero-content {
+        align-items: center;
+    }
+
+    .profile-frame img {
+        width: 190px;
+        height: 220px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    section:not(.hero) {
+        padding: 60px 7%;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+
     nav a {
         font-size: 12px;
     }
 
-    .hero {
-        min-height: 65vh;
+    .demo-app {
+        padding: 18px;
     }
+
+    .logo {
+        font-size: 12px;
+    }
+
 }
